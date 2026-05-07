@@ -320,7 +320,11 @@ class BiomedCoOp_BiomedCLIP(TrainerX):
 
         loss_summary = {
             "loss": loss.item(),
+            "loss_ce" : loss_ce.item(),
+            "loss_sccm" : loss_sccm.item(),
+            "loss_kdsp" : loss_kdsp.item(),
             "acc": compute_accuracy(logits, label)[0].item(),
+
         }
 
         if (self.batch_idx + 1) == self.num_batches:
